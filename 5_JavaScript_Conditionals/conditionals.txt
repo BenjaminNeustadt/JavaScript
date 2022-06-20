@@ -1,0 +1,45 @@
+# INTRO 
+
+Conditionals work the same way as other languages, but we need:
+
+Brackets () to enclose the condition.
+Curly braces {} to enclose the code "body" executed following this condition.
+
+# Exercise 
+
+To complete the following, you will have to:
+
+use if, else if and else to write conditionals.
+use the strict equality operator === to compare values. SAME AS RUBY ==
+
+Note: in all the following examples, we'll use the strict equality operator === 
+(instead of ==), as it can prevent some bugs, and is viewed as one of the best practices
+ in the JavaScript community. In your code, you should ideally use === as well when doing 
+ comparisons (unless you have a good reason not to!).
+
+Define a function getNumberSign that takes a number and returns either 'zero', 'positive' or 'negative' depending on its sign:
+> getNumberSign(3);
+'positive'
+
+> getNumberSign(0);
+'zero'
+
+> getNumberSign(-5);
+'negative'
+
+
+# Exercise
+
+A colleague just asked you some help to debug their code.
+
+```
+const isValidLength = (phoneNumber) => {
+  const validLength = 10;
+  if (phoneNumber.length == validLength) {
+    true;
+  } else {
+    false;
+  }
+}
+
+```

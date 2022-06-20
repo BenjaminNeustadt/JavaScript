@@ -1,0 +1,31 @@
+# Running JavaScript files
+
+* We've only been running JavaScript inside our node REPL. Like other languages we can write JavaScript into source files
+with the .js extension. We can run these files using node. 
+
+Cf. hello.js file
+
+* Every line of JavaScript ends with a semicolon (;). 
+  Actually not specific to JS - other languages have similar syntax - but this is obviously different from Ruby.
+
+  IN CASE YOU RUN INTO BUGS CHECK THERE ISNT A semicolon MISSING AT THE END OF THE LINE. 
+
+  To save yourself the hassle of checking for missing semicolons, a tool like: 
+
+  Prettier <https://prettier.io/docs/en/install.html> 
+
+  can help to automatically add them where they're needed (it also makes sure your code is properly formatted).
+
+  To run it so it automatically formats JS files, you can run the following in any project directory: 
+
+  ```  npx prettier --write . ```
+
+  NOTE: If you don't want to overwrite files, but onlly check if they're properly formatted, 
+  can use --check option instead of --write. 
+  
+  There's also a VSCode extension available: 
+
+  <https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode>
+
+  
+

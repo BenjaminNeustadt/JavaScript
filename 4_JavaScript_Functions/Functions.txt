@@ -1,0 +1,109 @@
+# FUNCTIONS
+
+## intro 
+
+We can define a function with the following syntax (a function is the same thing as a Ruby "method",
+but it lives on its own, without being attached to a specific object):
+
+```
+
+// 1. This function accepts no arguments
+const printMessage = () => {
+  console.log('Hi there!');
+}
+
+// 2. This function accepts one
+const printMessage = (message) => {
+  console.log(message);
+}
+
+printMessage('Hi there!');
+
+// 3. We use the `return` keyword to return a value from the function.
+// Be careful - in JavaScript, we *have* to use `return`, otherwise nothing will be returned.
+
+const getName = () => {
+  return 'Léo';
+}
+
+getName(); // returns 'Léo'
+
+// 4. Here, we forgot to use `return`.
+const getName = () => {
+  'Léo'
+}
+
+getName(); // returns undefined
+
+```
+## Exporting a function
+
+In JavaScript, to use a function outside of the file it is defined in, we need to "export" it using module.exports:
+
+
+``` 
+
+// file: hello.js
+
+const hello = () => {
+  console.log('Hello!');
+}
+
+// Add this at the end of the file
+module.exports = hello;
+
+```
+
+NOTE TO SELF: 
+
+Unlike in Ruby syntax, where we 'require' a file at the beginning of another, 
+in JavaScript we first have to export it at the end of the file where it is defined.
+
+Only after that can we "require" it from another file, or from the node REPL: 
+
+```
+
+// In the node REPL
+// Assuming we're in the same current directory where hello.js is.
+
+const hello = require('./hello');
+
+hello();
+
+```
+
+In JavaScript and Python one has to call the methods with ().
+
+
+In this module we'll learn modern JavaScript syntax: ES6 syntax (versions after 2015)
+However, both syntax (old and new) can be mixed together in the same file; 
+
+E.G.: 
+
+```
+
+var is the "legacy" keyword to declare a variable — it's equivalent to let:
+var total = 120;
+
+// equivalent to
+let total = 120;
+
+```
+```
+The function keyword can be used to declare functions:
+function add(a, b) {
+  return a + b;
+}
+
+// equivalent to
+const add = (a, b) => {
+  return a + b;
+}
+
+// also equivalent to
+var add = function (a, b) {
+  return a + b;
+}
+When writing code, prefer the syntax used in this module. But when reading code, online, remember those equivalences.
+
+```
