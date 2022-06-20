@@ -36,10 +36,10 @@ A colleague just asked you some help to debug their code.
 const isValidLength = (phoneNumber) => {
   const validLength = 10;
   if (phoneNumber.length == validLength) {
-    true;
+    return true;
   } else {
-    false;
+    return false;
   }
 }
-
+module.exports = isValidLength;
 ```

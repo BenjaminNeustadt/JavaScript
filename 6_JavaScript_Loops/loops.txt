@@ -1,0 +1,19 @@
+// function numbercount() {
+//   for (let i = 0 ; i <= 10 ; i++) {
+//     console.log(i);
+//   }
+// }
+
+
+// ANOTHER WAY OF WRITING IT WITH 'while'
+
+
+function numbercount() {
+  let i = 0
+  while (i <= 10) {
+    console.log(i);
+    i += 1;
+  }
+}
+
+module.exports = numbercount;
