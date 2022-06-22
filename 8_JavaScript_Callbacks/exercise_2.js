@@ -7,3 +7,10 @@ const executeAfterDelay = (delay, callbackFunction) => {
 }
   
   executeAfterDelay(5, printHello);
+
+
+  module.exports = printHello;
+  module.exports = executeAfterDelay;
+
+
+  
