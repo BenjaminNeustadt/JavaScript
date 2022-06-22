@@ -23,8 +23,8 @@ class UserBase {
   }
 
   getNames(users) {
-    console.log (this.users.map((element) => { 
-      return (element.getName()) 
+    return (this.users.map((element) => { 
+     (element.getName()) 
     }))
   } 
 
