@@ -8,7 +8,7 @@ class User {
   }
 
   getIntroduction() {
-    console.log(`Hi, my name is ${this.name}`);
+    // console.log(`Hi, my name is ${this.name}`);
     return (`Hi, my name is ${this.name}`);
   }
 }
@@ -23,8 +23,8 @@ class UserBase {
   }
 
   getNames(users) {
-    return (this.users.map((element) => { 
-     (element.getName()) 
+    console.log (this.users.map((element) => { 
+      return (element.getName()) 
     }))
   } 
 
@@ -40,5 +40,4 @@ const userBase = new UserBase(users);
 userBase.count();
 userBase.getNames();
 userBase.getIntroductions();
-
 
