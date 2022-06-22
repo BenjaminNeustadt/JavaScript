@@ -33,13 +33,17 @@ class ShoppingBasket {
   }
 
   getTotalPrice(basket) {
-    let sum = 0;
-    return (this.basket.map(n => sum += n.getPrice()));
+    const sum = this.basket.map(n => Number(n.getPrice())).reduce((partialSum, i) => partialSum + i);
     console.log(sum);
   }
+
+  // addItem() {
+  //   newbasket = basket.concat(new Candy());
+  // }
 }
 
 const basket = new ShoppingBasket([new Candy('Snickers', 1.5), new Candy('Bounty', 2)])
+
 basket.getTotalPrice();
 
 // getNames(users) {
