@@ -8,48 +8,52 @@ class Candy {
   }
 
   getName() {
-    // console.log(`${this.name}`);
-    return(`${this.name}`);
+    console.log ('getName:', this.name);
+    return this.name;
   }
 
   getPrice() {
-    // console.log(`${this.price}`);
-    return(`${this.price}`);
+    console.log ('getPrice:', this.price);
+    return this.price;
   }
 
 }
-
-const candy = new Candy('Mars', 4.99);
-
-candy.getName();
-
-candy.getPrice();
-
 
 class ShoppingBasket {
 
   constructor (basket) {
-    this.basket = basket
+    this.basket = []
   }
+
 
   getTotalPrice(basket) {
-    const sum = this.basket.map(n => Number(n.getPrice())).reduce((partialSum, i) => partialSum + i);
-    console.log(sum);
+    if (!(this.basket)) {
+      console.log(0);
+    }else {
+      const sum = (this.basket.map(n => n.getPrice()).reduce((p, i) => p + i));
+      console.log(sum);
+    }
   }
-
-  // addItem() {
-  //   newbasket = basket.concat(new Candy());
-  // }
 }
 
-const basket = new ShoppingBasket([new Candy('Snickers', 1.5), new Candy('Bounty', 2)])
+  // addItem(candy) {
+  //   newbasket = this.basket.push();
+  // }
+
+
+const candy = new Candy('Mars', 4.99);
+
+candy.getName();
+candy.getPrice();
+
+
+
+const basket = new ShoppingBasket();
+
+basket.getTotalPrice();
+// basket.addItem(candy);
+
+// const basket = new ShoppingBasket([new Candy('Snickers', 1.5), new Candy('Bounty', 2)])
 
 basket.getTotalPrice();
 
-// getNames(users) {
-//   console.log (this.users.map((element) => { 
-//     return (element.getName()) 
-//   }))
-// } 
-
-// console.log(element.getPrice())
