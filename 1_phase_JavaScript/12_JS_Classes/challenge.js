@@ -1,5 +1,3 @@
-
-
 class Candy {
 
   constructor(name, price) {
