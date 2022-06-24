@@ -1,12 +1,16 @@
-const { isTypedArray } = require('util/types')
-const searchCandies = require('./searchCandies')
-
+// const { isTypedArray } = require('util/types')
+const SearchCandies = require('./searchCandies')
 
 
 describe('searchCandies', () => {
-
-  it('returns all names', () => {
-    expect(searchCandies.names(candies)).toBe('Aero', 'Skitties', 'Mars');
+  it('getNames returns names', () => {
+    // console.log('Test is running...');
+    const search = new SearchCandies([
+      { name: 'Aero', price: 1.99 },
+      { name: 'Skitties', price: 2.99 },
+      { name: 'Mars', price: 1.49 }
+    ]);
+    expect(search.getNames()).toEqual(['Aero', 'Skitties', 'Mars']);
   });
 });
 
