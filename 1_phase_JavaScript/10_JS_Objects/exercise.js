@@ -15,12 +15,13 @@ const person = {
 
 // Print the value of the city attribute ('London').
 // Answer:
-// console.log(person.address['city']);
+console.log(person.address['city']);
 //OR, this works also: 
+console.log(person.address.city)
 
 // 1_Question:
 
 // Print the value of the second hobbies value ('tennis').
 // console.log(person.hobbies[1]);
 // Answer:
-// console.log(person.london.city);
+console.log(person.london.city);
