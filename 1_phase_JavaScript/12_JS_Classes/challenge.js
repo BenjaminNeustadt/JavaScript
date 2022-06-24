@@ -14,6 +14,7 @@ class Candy {
 
   getPrice() {
     console.log ('getPrice:', this.price);
+    console.log('the type is:', typeof this.price)
     return this.price;
   }
 
@@ -35,14 +36,13 @@ class ShoppingBasket {
     }
   }
 
+  // Exercise idea: make a function that prints a receipt. 
 
   addItem(candy) {
     this.basket.push(candy);
     console.log('What is this:', this.basket);
   }
 }
-
-
 
 const candy = new Candy('Mars', 4.99);
 
@@ -62,11 +62,9 @@ basket.getTotalPrice();
 
 
 
-
-
-
-
-
+// NOTES: Other people have put these classes into two sepearate files.
+// I have preferred to have them in the same file as it is easier to run the code this way, rather than
+// run each command through node.
 
 // const basket = new ShoppingBasket([new Candy('Snickers', 1.5), new Candy('Bounty', 2)])
 
