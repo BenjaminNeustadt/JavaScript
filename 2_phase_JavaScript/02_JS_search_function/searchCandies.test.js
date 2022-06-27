@@ -1,23 +1,37 @@
 // const { isTypedArray } = require('util/types')
-const SearchCandies = require('./searchCandies')
+const searchCandies = require('./searchCandies')
 
 
 describe('searchCandies', () => {
-  it('getNames returns names', () => {
-    // console.log('Test is running...');
-    const search = new SearchCandies([
-      { name: 'Aero', price: 1.99 },
-      { name: 'Skitties', price: 2.99 },
-      { name: 'Mars', price: 1.49 }
-    ]);
-    expect(search.getNames()).toEqual(['Aero', 'Skitties', 'Mars']);
-  });
+  it('searchCandies returns names and prices', () => {
+    expect(searchCandies('Ma', 10)).toEqual([ 'Mars', 'Maltesers' ]);
+  })
+
+  it('searchCandies returns names and prices', () => {
+    expect(searchCandies('Ma', 2)).toEqual([ 'Mars']);
+  })
+
+  it('searchCandies returns names and prices', () => {
+    expect(searchCandies('S', 10)).toEqual([ 'Skitties', 'Skittles', 'Starburst' ]);
+  })
+
+  it('searchCandies returns names and prices', () => {
+    expect(searchCandies('S', 4)).toEqual([ 'Skitties', 'Skittles' ]);
+  })
+
+  it('searchCandies returns names and prices the same with lowercase inputs', () => {
+    expect(searchCandies('s', 4)).toEqual([ 'Skitties', 'Skittles' ]);
+  })
+
 });
 
 
 
 
-
+// it('searchCandies returns only names', () => {
+  //   // console.log('Test is running...');
+  //   expect(searchCandies()).toEqual(['Aero', 'Skitties', 'Mars']);
+  // });
 
 
 
