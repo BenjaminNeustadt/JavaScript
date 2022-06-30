@@ -1,19 +1,19 @@
 const ShoppingBasket = require('./shoppingBasket');
 
 describe('basket', () => {
-  it('returns 0 when getTotalPrice() is called and basket is empty', () => {
+  xit('returns 0 when getTotalPrice() is called and basket is empty', () => {
     const basket = new ShoppingBasket();
     expect(basket.getTotalPrice()).toEqual(0)
   })
 
-  it('returns price when item added getTotalPrice()', () => {
+  xit('returns price when item added getTotalPrice()', () => {
     const basket = new ShoppingBasket();
     let candy = { getName: () => 'Haribo', getPrice: () => 4.99 };
     basket.addItem(candy)
     expect(basket.getTotalPrice()).toEqual(4.99)
   })
 
-  it('returns price when multiple items added getTotalPrice()', () => {
+  xit('returns price when multiple items added getTotalPrice()', () => {
     const basket = new ShoppingBasket();
     let candy_1 = { getPrice: () => 4.99 };
     let candy_2 = { getName: () => 'Skittle', getPrice: () => 3.99 };
@@ -22,9 +22,16 @@ describe('basket', () => {
     basket.addItem(candy_2)
     expect(basket.getTotalPrice()).toEqual(12.97)
   })
+
+  it('returns price minus discount with applyDiscount()', () => {
+    const basket = new ShoppingBasket();
+    const candy_2 = { getName: () => 'Skittle', getPrice: () => 3.99 };
+    // let discount = { applyDiscount: () => 2}
+    basket.addItem(candy_2)
+    basket.applyDiscount(1)
+    expect(basket.getTotalPrice()).toEqual(2.99)
+  })
 })
-
-
 
 
 
