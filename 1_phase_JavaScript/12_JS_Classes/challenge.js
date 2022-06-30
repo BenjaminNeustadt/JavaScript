@@ -34,7 +34,7 @@ class ShoppingBasket {
     }
   }
 
-  // Exercise idea: make a function that prints a receipt. 
+  // Exercise idea: make a function that prints a receipt.
 
   addItem(candy) {
     this.basket.push(candy);
