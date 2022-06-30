@@ -24,7 +24,7 @@ const searchCandies = (string, max) => {
 //ANOTHER WAY TO CAPITALIZE THE FIRST CHARACTER OF THE STRING (instead of ".charAt(0)[...]"):
 // .replace(/(^\w|\s\w)/g, m => m.toUpperCase()))
 
-console.log(searchCandies('Ma', 10))
+//console.log(searchCandies('Ma', 10))
 
 module.exports = searchCandies;
 
