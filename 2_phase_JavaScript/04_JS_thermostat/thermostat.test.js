@@ -36,6 +36,16 @@ describe('thermostat', () => {
     }
     expect(thermostat.getTemperature()).toEqual(25);
   })
+// TO BE CONTINUED... (or looked over with a coach)
+  // it ('when PSM turned on, this.thermostat resets to 25, even if already above', () => {
+  //   const thermostat = new Thermostat(); // WE START AT 20
+  //   thermostat.setPowerSavingMode(false); // WE NOW HAVE #@ AS MAX
+  //   for (let i = 0 ; i < 6 ; i++) {
+  //     thermostat.up(); // WE INCREMENT TO 26
+  //   }
+  //   thermostat.setPowerSavingMode(true) // WE ARE AT 26 BUT WE WANT THE MAX TEMP TO BE 25, by switching psm on.
+  //   expect(thermostat.getTemperature()).toEqual(25);
+  // })
 
   it ('when PSM off, max temp is 32, and temp can be higher than 25', () => {
     const thermostat = new Thermostat();

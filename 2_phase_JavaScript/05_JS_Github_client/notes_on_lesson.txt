@@ -1,0 +1,73 @@
+Notes on Github client
+- - - - - - - - - - - -
+
+"callback" functions :
+example of asynchronous behaviour
+
+Another example : when we need to `fetch` remote
+data from other APIs (Application Programming Interface)
+because we need to wait before the data is available (the network
+can be slow and unreliable), therefore we use callbacks.
+
+E.G. Ruby's Sinatra Github repo, looking at the link in browser, can see only data (in the JSON format)
+
+Humans like to browse nice/colorful webpages and use links/buttons/forms to interact with it. Porgrams don't need uch webpages,
+they can just read and write raw data.
+
+APIs are just a simpler way of interacting with a website like Github, but for programs, rather than humans.
+
+USING the got package to send HTTP requests from JS program.
+        - - - -
+
+We create githubRequest.js file and write the code to fetch the data from the previous API, but the result we get
+is hard to read as it is returned in JSON; so we can fix this by:
+
+convert the tring data into a JavaScript object so it is formatted properly.
+We can do this using JSON.parse:
+                    - - - - - - -
+following done in node:
+
+`````````````````````````````````
+Welcome to Node.js v18.4.0.
+Type ".help" for more information.
+> const stringValue = '{ "name": "John" }';
+undefined
+> stringValue
+'{ "name": "John" }'
+> const objectValue = JSON.parse(stringValue);
+undefined
+> console.log(objectValue);
+{ name: 'John' }
+undefined
+> console.log(objectValue.name);
+John
+undefined
+>
+``````````````````````````````````
+
+
+First exercise:
+
+1. Modify code in githubRequest.js so that it converts
+received response body to an object, using JSON.parse and prints it:
+
+the function that does the logic is the function we
+call callback function (i.e. setTimeout() the native function to JS,
+but it takes another function to do its work, i.e. a function printmessage(), is an example of
+a callback function, one that we give as an argument and it will be called back later when it needs to be
+called back, whenever setTimeout() decides to call it back.)
+
+E.G. Look at this:
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+const got = require('got');
+// we require the package 'got'
+
+const handleReceivedResponse = (response) => {
+  const responseObject = JSON.parse(response.body);
+  console.log(responseObject);
+}
+// this is the callback function, because it relies on being called by a second function below[is this right?]
+got('https://api.github.com/repos/sinatra/sinatra').then(handleReceivedResponse);
+
+Resources on APIs:
+<https://www.loginradius.com/blog/engineering/github-api/#:~:text=Github%20APIs(%20or%20Github%20ReST,you%20can%20call%20the%20API.>
