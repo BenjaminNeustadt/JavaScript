@@ -1,6 +1,10 @@
 class Github{
+
   fetch(){
-    return 'hello';
+  }
+
+  getRepoData(){
+   return {"description": "Some fake description", "name": "sinatra/sinatra"}
   }
 };
 
