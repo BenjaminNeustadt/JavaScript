@@ -1,7 +1,20 @@
+/*const got = require('got')
+
+const fetchJson = (url, dothisafter) => {
+  got(url).then((n) => { dothisafter(n.body)});
+}
+
+module.exports = fetchJson;
+*/
+//THIS IS VERSION THAT RETURNS NOT IN A STRING:
 const got = require('got')
 
-const fetchJson = (url, dothisaftergettingdatafirstusingkeywordthen) => {
-  got(url).then((n) => { dothisaftergettingdatafirstusingkeywordthen(n)});
+const fetchJson = (url, dothisafter) => {
+  got(url)
+    .then((n) => {
+      dothisafter(JSON.parse(n.body)
+      );
+    });
 }
 
 module.exports = fetchJson;
@@ -11,10 +24,10 @@ module.exports = fetchJson;
 // callbackFunction
 
 // // when runnning in node we do not need the 'function' keyword; we have already
-// called it so previously in the fetchJson.js file we require. 
+// called it so previously in the fetchJson.js file we require.
 
-// // anonymous function. 
-// // function without name: 
+// // anonymous function.
+// // function without name:
 //,,,,,,,,,,,,,,,,,,,,,,,,,,,
 // (response) => {
 //   console.log(response);
@@ -28,7 +41,7 @@ module.exports = fetchJson;
 //``````````````````````````````
 //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 // () => {                       \
-//                                } This is already a function, just empty. 
+//                                } This is already a function, just empty.
 // }                             /
 //```````````````````````````````
-// 
+//

@@ -71,3 +71,35 @@ got('https://api.github.com/repos/sinatra/sinatra').then(handleReceivedResponse)
 
 Resources on APIs:
 <https://www.loginradius.com/blog/engineering/github-api/#:~:text=Github%20APIs(%20or%20Github%20ReST,you%20can%20call%20the%20API.>
+
+- - - - - - - - - - - - - - - - - - - -- - - - - - - - - -
+NOTES AFTER ROBI CHECKED WITH COACH ALEX:
+
+We were previously confused with the output, as the example they showed on github had quotes; we had tried to do it the same as the example,
+but they were specifically asking for a JavaScript object.
+
+The diff between a Json and a JavaScript object is that:
+
+A Json is a string, which has quotes: this is what our output was (the same as on the exercise)
+____________________________________________
+E.G:
+//   {
+//     "userId": 1,
+//     "id": 1,
+//     "title": "delectus aut autem",
+//     "completed": false
+//   },
+
+
+However, a JS object is an object with values inside it
+_________________________________________________________
+
+E.G:
+{
+//     userId: 1,
+//     id: 1,
+//     title: 'delectus aut autem',
+//     completed: false
+//   },
+
+In the following result, the data has been parsed from JSON into plain JavaScript object.

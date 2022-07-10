@@ -12,7 +12,7 @@ class GithubAPi {
   fetchRepositoryData(path, dothisafter) {
     let url = 'https://api.github.com/repos/' + path
     got(url)
-      .then((n) => { 
+      .then((n) => {
         dothisafter(JSON.parse(n.body))
       });
   }
