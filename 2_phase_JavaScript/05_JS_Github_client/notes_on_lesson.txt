@@ -103,3 +103,8 @@ E.G:
 //   },
 
 In the following result, the data has been parsed from JSON into plain JavaScript object.
+
+
+RESOURCES:
+https://stackoverflow.com/questions/8294088/javascript-object-vs-json
+^^^^^^^READ THIS^^^^^^^
